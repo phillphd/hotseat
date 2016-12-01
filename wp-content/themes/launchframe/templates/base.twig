@@ -6,11 +6,11 @@
 	</head>
 {% endblock %}
 
-	<body class="{{body_class}}" data-template="base.twig">
-		<header class="site-header">
-			{% block header %}
-			{% endblock %}
-      {% include 'nav.twig' %}
+	<body class="{{body_class}} u-bg__img" data-template="base.twig" style="background-image: url('{{ theme.link }}/assets/src/img/bg.jpg');">
+		<header class="site-header text-xs-center">
+			<div class="logo">
+				{% include '/assets/src/img/logo.svg' %}
+			</div>
 		</header>
 
 		<main class="site-main">

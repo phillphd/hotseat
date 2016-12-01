@@ -2,3 +2,175 @@
 @import "../../vendor/bootstrap/scss/bootstrap";
 @import "utilities";
 @import "grid_extensions";
+
+body {
+    min-height: 100vh;
+}
+
+p {
+    font-size: .8rem;
+    color: #FFF;
+    a {
+        padding: 0 3px;
+        margin-left: 2px;
+        background-color: #FFF;
+        transition: .4s .1s;
+        &:hover {
+            color: #FFF;
+            text-decoration: none;
+            background-color: $brand-primary;
+        }
+    }
+}
+
+.site-header {
+    position: relative;
+    padding: 40px 0;
+    .logo {
+        svg {
+            max-height: 110px;
+        }
+    }
+}
+
+.hotseats {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.hotseat {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    margin: 10px 0;
+    color: #FFF;
+    text-align: center;
+    background: linear-gradient(fade-out($brand-secondary, .1) 0%, fade-out($brand-primary, .1) 100%);
+    border: 1px solid #FFF;
+    @include media-breakpoint-up(md) {
+        width: calc(50% - 10px);
+        padding-bottom: calc(50% - 10px);
+        margin: 5px;
+    }
+    @include media-breakpoint-up(lg) {
+        width: calc(50% - 20px);
+        padding-bottom: calc(50% - 20px);
+        margin: 10px;
+    }
+    @include media-breakpoint-up(xl) {
+        width: calc(33.3333% - 20px);
+        padding-bottom: calc(33.3333% - 20px);
+        margin: 10px;
+    }
+    &:hover {
+        .hotseat__img {
+            pointer-events: none;
+            opacity: .05;
+        }
+    }
+    &__img {
+        z-index: 9;
+        opacity: 1;
+        transition: .5s .1s;
+    }
+    &__num {
+        position: relative;
+        display: inline-block;
+        margin: 30px 0 20px;
+        font-size: 3rem;
+        font-weight: 700;
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #FFF;
+            border-radius: 50%;
+            content: "";
+            opacity: .4;
+            transform: translateY(-50%) translateX(-50%);
+        }
+        span {
+            position: relative;
+        }
+    }
+    &__name {
+        padding: 0 20px;
+        margin-bottom: 20px;
+        font-size: 1.7rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+    &__title {
+        padding: 0 20px;
+        font-size: .8rem;
+        font-weight: 300;
+        a {
+            padding: 0 3px;
+            margin-left: 2px;
+            background-color: #FFF;
+            transition: .4s .1s;
+            &:hover {
+                color: #FFF;
+                text-decoration: none;
+                background-color: $brand-primary;
+            }
+        }
+    }
+    &__social {
+        position: absolute;
+        bottom: 20px;
+        left: 30px;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        list-style-type: none;
+        li {
+            display: inline-block;
+            margin: 0 6px;
+            font-size: 1.6rem;
+            transition: .2s .1s;
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+        a {
+            color: #FFF;
+        }
+    }
+    &__play {
+        position: absolute;
+        right: 30px;
+        bottom: 20px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #FFF;
+        border-radius: 50%;
+        transition: .3s .1s;
+        &:hover {
+            background-color: #FFF;
+            &::after {
+                border-left: 16px solid $brand-primary;
+            }
+        }
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 16px solid #FFF;
+            content: "";
+            transform: translateY(-50%) translateX(-40%);
+            transition: .3s .1s;
+        }
+    }
+}

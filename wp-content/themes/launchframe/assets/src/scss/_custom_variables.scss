@@ -29,7 +29,8 @@
 //$gray-lighter:              #eceeef;
 //$gray-lightest:             #f7f7f9;
 
-//$brand-primary:             #0275d8;
+$brand-primary:             #D61F5D;
+$brand-secondary:           #F26739;
 //$brand-success:             #5cb85c;
 //$brand-info:                #5bc0de;
 //$brand-warning:             #f0ad4e;
@@ -103,7 +104,7 @@
 //  sm: 34rem,    // 480
  // md: 45rem,    // 720
  // lg: 60rem,    // 960
- // xl: 72.25rem  // 1140
+ // xl: 75rem  // 1140
 //);
 
 
@@ -119,7 +120,7 @@
 //
 // Font, line-height, and color for body text, headings, and more.
 
-//$font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:     "Gotham SSm A", "Gotham SSm B", Arial, sans-serif;
 //$font-family-serif:          Georgia, "Times New Roman", Times, serif;
 //$font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace;
 //$font-family-base:           //$font-family-sans-serif;

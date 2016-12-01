@@ -40,6 +40,8 @@ class LaunchframeSite extends TimberSite {
   function register_stylesheets() {
     global $package_version;
     wp_enqueue_style( 'application-style', get_template_directory_uri() . '/assets/dist/css/application.min.css', true, $package_version );
+    wp_enqueue_style( 'typography', 'https://cloud.typography.com/6228872/7452152/css/fonts.css', true, $package_version );
+    wp_enqueue_style( 'fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', true, $package_version );
   }
   function register_scripts() {
   	global $package_version;

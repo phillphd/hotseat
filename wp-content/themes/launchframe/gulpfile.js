@@ -59,7 +59,7 @@ gulp.task('dist-sass', function () {
       .pipe(tasks.cssmin())
 		//.pipe(tasks.sourcemaps.write())
 	  .pipe(gulp.dest('./assets/dist/css')).on('end', function(){
-
+      gulp.watch('assets/src/**/*.scss', gulp.parallel('dist-sass', 'version-update'));
 });
 
 
