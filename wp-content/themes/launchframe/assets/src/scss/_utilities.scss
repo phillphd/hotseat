@@ -21,4 +21,8 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+    &__img--tiled {
+        z-index: 0;
+        background-repeat: repeat;
+    }
 }

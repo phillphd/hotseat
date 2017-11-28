@@ -4,22 +4,21 @@
 @import "grid_extensions";
 
 body {
+    position: relative;
     min-height: 100vh;
+    padding-bottom: 100px;
 }
 
 p {
     font-size: .8rem;
     color: #FFF;
-    a {
+    a,
+    a:hover {
         padding: 0 3px;
         margin-left: 2px;
-        background-color: #FFF;
-        transition: .4s .1s;
-        &:hover {
-            color: #FFF;
-            text-decoration: none;
-            background-color: $brand-primary;
-        }
+        color: #FFF;
+        text-decoration: none;
+        background-color: #1E252B;
     }
 }
 
@@ -29,7 +28,30 @@ p {
     .logo {
         svg {
             max-height: 110px;
+            path,
+            polygon,
+            rect {
+                fill: #EFEFEF;
+            }
+            rect {
+                fill: #E33E35;
+            }
         }
+    }
+}
+
+.site-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    p {
+        display: inline-block;
+        font-size: 10px;
+        background-color: #1E252B;
+        opacity: .1;
     }
 }
 
@@ -51,8 +73,8 @@ p {
     margin: 370px auto 20px;
     color: #FFF;
     text-align: center;
-    background: linear-gradient(fade-out($brand-secondary, .1) 0%, fade-out($brand-primary, .1) 100%);
-    border: 1px solid #FFF;
+    background: linear-gradient(fade-out(#1E252B, .1) 0%, fade-out(#11181E, .1) 100%);
+    box-shadow: 0 0 30px -5px #000;
     @include media-breakpoint-up(md) {
         width: calc(50% - 10px);
         max-width: none;
@@ -80,58 +102,14 @@ p {
     &__img {
         z-index: 9;
         opacity: 1;
-        transform: translateY(-100%);
+        transform: translateY(-23%);
         transition: .5s .1s;
         @include media-breakpoint-up(md) {
             transform: none;
         }
     }
-    &__num {
-        position: relative;
-        display: inline-block;
-        margin: 30px 0 20px;
-        font-size: 3rem;
-        font-weight: 700;
-        &::before {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 80px;
-            height: 80px;
-            border: 1px solid #FFF;
-            border-radius: 50%;
-            content: "";
-            opacity: .4;
-            transform: translateY(-50%) translateX(-50%);
-        }
-        span {
-            position: relative;
-        }
-    }
-    &__name {
-        padding: 0 20px;
-        margin-bottom: 20px;
-        font-size: 1.7rem;
-        font-weight: 700;
-        line-height: 1;
-    }
-    &__title {
-        padding: 0 20px;
-        font-size: .8rem;
-        font-weight: 300;
-        a {
-            padding: 0 3px;
-            margin-left: 2px;
-            background-color: #FFF;
-            transition: .4s .1s;
-            &:hover {
-                color: #FFF;
-                text-decoration: none;
-                background-color: $brand-primary;
-            }
-        }
-    }
-    &__social {
+    &__social,
+    &__options {
         position: absolute;
         bottom: 20px;
         left: 30px;
@@ -149,7 +127,29 @@ p {
             }
         }
         a {
-            color: #FFF;
+            color: $brand-primary;
+        }
+    }
+    &__options {
+        top: 100%;
+        left: 50%;
+        height: 50px;
+        width: 100%;
+        transform: translate(-50%, calc(-100% - 30px));
+        @include media-breakpoint-up(md) {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        li {
+            margin: 0 20px;
+            font-size: 3rem;
+            a {
+                color: #F3E4B4;
+                transition: .4s;
+                &:hover {
+                    color: $brand-primary;
+                }
+            }
         }
     }
     &__play {
